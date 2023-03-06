@@ -1,0 +1,596 @@
+<!--  ---------- ------- ------------ ------- register code ----------------------------->
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="gym, simarpreetfitness13, 13rb, 13RB, gajsinghpur, royal gym, royalgym, ROYALGYM, ROYAL GYM, 13rbGajsinghpur, 13r bGajsinghpur, 13RbGajsinghpur,">
+    <!-- <link rel="stylesheet" href="gagu.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        .q1 {
+            /* border: red solid 2px; */
+            position: relative;
+            width: 700px;
+            height: 468px;
+            left: 602px;
+        }
+    </style>
+</head>
+<title>simarpreetfitness13 <?php $_SESSION['na']?></title>
+</head>
+
+<body>
+   
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+    <!-- starting nav ber  -->
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8080/gagu/re.php">SIN-UP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="http://localhost:8080/gagu/login.php">SIN-IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8080/gagu/loggout.php">LOG OUT </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+
+            </div>
+        </div>
+    </nav>
+
+       <!-- WEL COME TO   <?php echo $_SESSION['na']?> -->
+    <!-- clogeing nav ber  -->
+    <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+    <!-- starting 3 img  -->
+
+
+
+
+    <div class="q1">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="p2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="C:\Users\jashacker\Downloads\gaggu.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="g.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <p class="litel">ap ke waight ka gain hona or drop hona ap ke Nutrition per depend kr ta hai apne ap ko transform kr
+        ne ke lyea ap ke pass right Nutrition plan, right traning plan, right rest hona bot jruri ap without fitness
+        plan ke ap apne goal ko achieve nahi kr sak te proper plan se he app ko extreme level ke results fell kr nu milu
+        gye all natural 🌱 no drugs 💉 use.</p>
+
+    <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+    <!-- staring bootstap java script -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- closeing bootstap java script -->
+    <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+
+
+</body>
+
+</html>
+
+<!--  ---------- ------- ------------ -------close register code ----------------------------->
+
+
+ <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+                                 <!-- Login page start -->
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+
+<?php
+$LOGIN = false;
+$yar = false;
+$showError = false;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // include 'reg.php';
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $datebase = "user";
+
+    // Add Database 
+    $conn = mysqli_connect($server, $username, $password, $datebase);
+    if (!$conn) {
+        //      echo 'your id success ';
+        //    }
+        //    else{
+        die("Error" . mysqli_connect_error());
+    }
+    //stop
+    $phone = $_POST["phone"];
+    $password = $_POST["password"];
+
+    $sql = "select * from users where phone='$phone' AND password='$password'";
+    $yar=false;
+
+    $result = mysqli_query($conn, $sql);
+    $num = mysqli_num_rows($result);
+    if ($num == 1) {
+                $LOGIN = true;
+                session_start();
+                $_SESSION['loggedin'] = true;
+                $_SESSION['phone'] = $phone;
+                header('location:gagu.php');
+            } 
+            else {
+               $yar = true;
+            
+            }
+}
+       
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in page</title>
+    <style>
+        body {
+
+            background: url(as.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+            flex-direction: column;
+
+        }
+
+        * {
+
+            font-family: cursive;
+
+            box-sizing: padding-box;
+
+        }
+
+        form {
+            height: 429px;
+            width: 1000px;
+
+            border: 3px solid rgb(177, 142, 142);
+
+            padding: 20px;
+
+            background:
+                /* From https://css.glass */
+                background: rgba(255, 255, 255, 0.33);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(6.8px);
+            -webkit-backdrop-filter: blur(6.8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            ;
+
+            border-radius: 20px;
+
+        }
+
+        h2 {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+        input {
+
+            display: block;
+
+            border: 2px solid #ccc;
+
+            width: 95%;
+
+            padding: 10px;
+
+            margin: 10px auto;
+
+            border-radius: 36px;
+
+        }
+
+        input:hover {
+            background-color: chartreuse;
+
+            background: rgba(255, 255, 255, 0);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(42, 11, 182, 0.87);
+            backdrop-filter: blur(8.6px);
+            -webkit-backdrop-filter: blur(8.6px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        label {
+
+            color: black;
+
+            font-size: 18px;
+
+            padding: 10px;
+
+        }
+
+        button {
+
+            float: right;
+
+            background: rgb(35, 174, 202);
+
+            padding: 10px 15px;
+
+            color: #fff;
+
+            border-radius: 5px;
+
+            margin-right: 10px;
+
+            border: none;
+
+        }
+
+        button:hover {
+
+            opacity: .10;
+
+        }
+
+        .error {
+
+            background: #F2DEDE;
+
+            color: #0c0101;
+
+            padding: 10px;
+
+            width: 95%;
+
+            border-radius: 5px;
+
+            margin: 20px auto;
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: rgb(134, 3, 3);
+
+        }
+
+
+
+        a:hover {
+
+            opacity: .7;
+
+        }
+
+
+        .btn {
+            position: relative;
+            box-sizing: content-box;
+            top: 368px;
+        }
+
+
+        .box {
+            border-radius: 50px;
+            left: 510px;
+            /* height: 3px; */
+            width: 50px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            padding: 20px 50px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
+            font: 16px/24px Arial, sans-serif;
+            background-color: #4973ff;
+            transition:
+                box-shadow 0.4s ease,
+                background-color 0.4s ease,
+                color 0.4s ease;
+            box-shadow:
+                0 0 2px 0 rgba(73, 115, 255, .1),
+                0 0 4px 0 rgba(73, 115, 255, .2),
+                0 0 6px 0 rgba(73, 115, 255, .3),
+                0 0 8px 0 rgba(73, 115, 255, .4),
+                0 0 12px 0 rgba(73, 115, 255, .5),
+                0 0 18px 0 rgba(73, 115, 255, .6);
+        }
+
+        .box:hover {
+            background-color: #ea3c;
+            box-shadow:
+                0 0 2px 0 rgba(238, 170, 51, 0.1),
+                0 0 4px 0 rgba(238, 170, 51, 0.2),
+                0 0 6px 0 rgba(238, 170, 51, 0.3),
+                0 0 8px 0 rgba(238, 170, 51, 0.4),
+                0 0 12px 0 rgba(238, 170, 51, 0.5),
+                0 0 18px 0 rgba(238, 170, 51, 0.6),
+                0 0 4px 0 rgba(238, 170, 51, 0.7);
+        }
+
+        .box span {
+            color: #fff;
+            letter-spacing: 8px;
+        }
+
+        .box i {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 200px;
+            background-color: inherit;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+            transition:
+                transform 0.4s linear,
+                top 1s linear;
+            overflow: hidden;
+        }
+
+        .box i:before,
+        .box i:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -75%);
+        }
+
+        .box i:before {
+            border-radius: 46%;
+            background-color: rgba(20, 20, 20, 0.2);
+            animation: animate 5s linear infinite;
+        }
+
+        .box i:after {
+            border-radius: 40%;
+            background-color: rgba(20, 20, 20, 0.5);
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform:
+                    translate(-50%, -75%) rotate(0deg);
+            }
+
+            100% {
+                transform:
+                    translate(-50%, -75%) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 1400px) {
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-size: 100% 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+
+            form {
+                position: relative;
+                width: 658px;
+                height: 537px;
+                box-sizing: border-box;
+                left: 8px;
+
+            }
+
+
+
+            .btn {
+                position: relative;
+                right: 70px;
+                left: 305px;
+                top: 52px;
+                width: 3px;
+                box-sizing: border-box;
+                display: inline-flex;
+                justify-content: center;
+
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-size: 551px 1150px;
+                display: flex;
+                justify-content: center;
+            }
+
+
+            form {
+                position: relative;
+                width: 343px;
+                height: 434px;
+                box-sizing: border-box;
+                left: 8px;
+
+            }
+
+            input {
+                position: relative;
+                height: 3px;
+            }
+
+
+            .btn {
+                position: relative;
+                right: 70px;
+                left: 148px;
+                top: 20px;
+                width: 78px;
+                box-sizing: border-box;
+                display: inline-flex;
+                justify-content: center;
+                padding: 0px;
+                height: 23px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    if ($LOGIN) {
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>success!</strong> Your Accout login.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    ?>
+    <?php
+    if ($yar) {
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>error!</strong> Your password is incorrect .
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    ?>
+
+    <form action="login.php" method="post">
+
+        <h2>LOGIN</h2>
+
+        <label for="phone">Phone Number</label>
+
+        <input type="text" name="phone" placeholder="Phone"><br>
+
+
+        <label for="password">Password</label>
+
+        <input type="password" name="password" placeholder="Password">
+
+        <!-- <button type="submit">Login</button> -->
+        
+            <!-- <input type="submit" name="SIN-IN" class="btn box" value="LOG-IN" id="login-btn" name="aaa"> <span 
+                class="formerror"></span> -->
+                <button type="sumbit" class="btn box" name="btn" > LOGIN</button> 
+        
+        <p>Don't have an account? <a href="http://localhost:8080/gagu/re.php">Sign up now</a>.</p>
+
+    </form>
+
+
+</body>
+
+</html>
+<!--  ---------- ------- ------------ -------close  code ----------------------------->
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
