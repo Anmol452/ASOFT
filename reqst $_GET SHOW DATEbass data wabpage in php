@@ -1,0 +1,76 @@
+$sql = "SELECT * FROM `trirr`";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    $title = $row['titel'];
+    $c_num = $row['customer_number'];
+    $c_no = $row['customer_number'];
+    $text = $row['text'];
+    $date = $row['date'];
+    $oo = $row['sno'];
+  
+  echo '
+       <tbody class="table-group-divider">
+       <tr>
+      <th scope="row">' . $oo . '</th>
+      <td>' . $title . '</td>
+      <td>' . $c_num . '</td>
+      <td>' . $c_no . '</td>
+      <td>' . $text . '</td>
+      <td>' . $date . '</td>
+    </tr>
+ </tbody>';
+ 
+ 
+ ---------------------------------------------------------------( ?getid = '.$id.' ) wala method--------------------------------
+ 
+ 
+  <?php
+	$sql = "SELECT * FROM `ususuauafbfjbbsfafd`";
+	$result = mysqli_query($conn, $sql);
+	while ($row = mysqli_fetch_assoc($result)) {
+		$id = $row['category_id'];
+		$cat = $row['category_name'];
+		$desc = $row['category_description'];
+
+		echo 
+		'
+	<div class="container">
+	<div class="card" style="width: 18rem;">
+	<img src="<img src="https://source.unsplash.com/1600x900/?' . $cat . ',coding"" class="card-img-top" alt="...">
+	<div class="card-body">
+	  <h5 class="card-title"> <a herf = "_awaw.php?catid=' . $id . '">' . $cat . '</a></h5>
+	  <p class="card-text">Some quick example text to build on the card title and make up the b</p>
+	  <a href="_awaw.php?catid=' . $id . '" class="btn btn-primary">Go somewhere</a>
+	</div>
+  </div>
+                                                                          
+	</div>
+	';
+	}
+	?>
+  
+  -----------next page ------------
+  
+   <?php
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `ususuauafbfjbbsfafd` WHERE category_id = $id";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $cat = $row['category_name'];
+        $desc = $row['category_description'];
+    }
+    ?>
+
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Welcome to
+            <?php echo $cat ?>
+        </h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer
+            so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">
+            <?php echo $desc ?>
+        </p>
+    </div>
+    ?>
