@@ -45,3 +45,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
+
+
+<?php
+    if ($error) {
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Comforam password rong!</strong> enter same password .
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        ';
+    }
+    ?>
+
+<?php
+    if ($showerror) {
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>phone or user name alrady!</strong> alrady use number or user name  .
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        ';
+    }
+    ?>
