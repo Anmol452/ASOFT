@@ -1,0 +1,19 @@
+<?php 
+
+echo "hello world <br>";
+
+$server = "localhost";
+$username = "root";
+$password = "";
+$datebase = "asdffhrhfbjcufjbsjdisssdadfrref";
+
+// Add Database 
+$conn = mysqli_connect($server, $username, $password, $datebase);
+if ($conn) {
+         echo 'your id success ';
+       }
+       else{
+    die("Error" . mysqli_connect_error());
+}
+
+?>
