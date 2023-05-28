@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 session_start();
-                $_SESSION['loggeden'] = true;
+                $_SESSION['loggedin'] = true;
                 $_SESSION['phone'] = $phone;
                 header('location:forum.php');
             } else {
