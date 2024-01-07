@@ -1,142 +1,34 @@
-//pont no.1// index.php file________________|
+// php photo upload step by step 
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Image Upload Using PHP</title>
-	<style>
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			min-height: 100vh;
-		}
-	</style>
-</head>
-<body>
-	<?php if (isset($_GET['error'])): ?>
-		<p><?php echo $_GET['error']; ?></p>
-	<?php endif ?>
-     <form action="upload.php"
-           method="post"
-           enctype="multipart/form-data">
-
-           <input type="file" 
-                  name="my_image">
-
-           <input type="submit" 
-                  name="submit"
-                  value="Upload">
-     	
-     </form>
-</body>
-</html>
-
-//pont no.2// upload.php file________________|
-
-<?php 
-
-if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
-	include "db_conn.php";
-
-	echo "<pre>";
-	print_r($_FILES['my_image']);
-	echo "</pre>";
-
-	$img_name = $_FILES['my_image']['name'];
-	$img_size = $_FILES['my_image']['size'];
-	$tmp_name = $_FILES['my_image']['tmp_name'];
-	$error = $_FILES['my_image']['error'];
-
-	if ($error === 0) {
-		if ($img_size > 125000) {
-			$em = "Sorry, your file is too large.";
-		    header("Location: index.php?error=$em");
-		}else {
-			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
-			$img_ex_lc = strtolower($img_ex);
-
-			$allowed_exs = array("jpg", "jpeg", "png"); 
-
-			if (in_array($img_ex_lc, $allowed_exs)) {
-				$new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
-				$img_upload_path = 'uploads/'.$new_img_name;
-				move_uploaded_file($tmp_name, $img_upload_path);
-
-				// Insert into Database
-				$sql = "INSERT INTO images(image_url) 
-				        VALUES('$new_img_name')";
-				mysqli_query($conn, $sql);
-				header("Location: view.php");
-			}else {
-				$em = "You can't upload files of this type";
-		        header("Location: index.php?error=$em");
-			}
-		}
-	}else {
-		$em = "unknown error occurred!";
-		header("Location: index.php?error=$em");
-	}
-
-}else {
-	header("Location: index.php");
-}
+// step 1
+// careat new folder name = images  
 
 
-//pont no.3// view.php file________________|
+// step 2
+
+<?php
+
+$filename = $_FILES["uploadfile"]["name"];
+$tmpname = $_FILES["uploadfile"]["tmp_name"];
+$folder ="images/.$filename";
+
+move_uploaded_file($tmpname, $folder); 
+echo "<img src='$folder' height='150px' width='150px'>";
+
+?>
+
+// step 3
+
+// add html tag
+ <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <div><input type="file" name="uploadfile1" id="fileToUpload1" required></div>
+              <div><input type="submit" value="Upload Blog" name="submit"></div>
+    </form>
 
 
-<?php include "db_conn.php"; ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>View</title>
-	<style>
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-wrap: wrap;
-			min-height: 100vh;
-		}
-		.alb {
-			width: 200px;
-			height: 200px;
-			padding: 5px;
-		}
-		.alb img {
-			width: 100%;
-			height: 100%;
-		}
-		a {
-			text-decoration: none;
-			color: black;
-		}
-	</style>
-</head>
-<body>
-     <a href="index.php">&#8592;</a>
-     <?php 
-          $sql = "SELECT * FROM images ORDER BY id DESC";
-          $res = mysqli_query($conn,  $sql);
-
-          if (mysqli_num_rows($res) > 0) {
-          	while ($images = mysqli_fetch_assoc($res)) {  ?>
-             
-             <div class="alb">
-             	<img src="uploads/<?=$images['image_url']?>">
-             </div>
-          		
-    <?php } }?>
-</body>
-</html>
+// step 4 data bass ka liya 
+    $sql = "INSERT INTO `bloging`(`image`) VALUES ( '$folder')";
+    $result = mysqli_query($conn, $sql);
 
 
 
-//pont no.4// sql file________________|
-
-CREATE TABLE `images` (
-  `id` int(11) NOT NULL,
-  `image_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
