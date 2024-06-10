@@ -1,0 +1,70 @@
+# step 1 ) cearte search.php page 
+
+
+# step 2 ) send get rquste search.php
+
+<form class="wrap-search-header flex-w p-l-15" action="search.php" method="get">
+					<button class="flex-c-m trans-04 sbtn">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+
+					
+					<input class="plh3 softin" type="text" name="search" placeholder="Search...">
+
+					<button class="softsearchbtn">
+						 Search
+					</button>
+				</form>
+
+# step 3 ) search.php page data show
+
+
+<?php
+    include 'db.php';
+    $search = $_GET['search'];
+    $sql = "SELECT * FROM `store` WHERE Prouct_Name like '%$search%' or desction like '%$search%' or rs like '%$search%' or cat like '%$search%' or obj like '%$search%'";
+
+
+	// Get result
+
+	$result = mysqli_query($conn, $sql);
+ 
+	// Check if there are rows returned
+	if (mysqli_num_rows($result) > 0) {
+		// Fetch the data and display it
+		while ($row = mysqli_fetch_assoc($result)) {
+			// Escape output to prevent XSS
+			// `Prouct_Name`, `sub-title`, `desction`, `mrp`, `rs`, `img1`, `img2`, `img3`, `cat`
+			$pn = htmlspecialchars($row['Prouct_Name']);
+			// $st = htmlspecialchars($row['fastname']);
+			// $desc = htmlspecialchars($row['lastname']);
+			$mrp = htmlspecialchars($row['mrp']);
+			$rs = htmlspecialchars($row['rs']);
+			$Listno = $row['Listno'];
+			$img1 = $row['img1'];
+			$stock = $row['stock'];
+            $save = $mrp-$rs;
+			$pr = $save/$mrp*100;
+			$ps = round($pr, 0);
+
+
+			
+			echo '
+			<tr> 
+				<td><img src="admin/' . $img1 . '" alt="" height="200" width="200"></td>
+				<td>' . $pn . ' <br>₹ '.$rs.'  <del>MRP'.$mrp.'</del> </td>
+
+				<td></td>
+				<td></td>
+				<td></td>
+	
+			</tr>';
+						}
+					}
+?>
+
+
+
+
+
+    
